@@ -1,0 +1,18 @@
+<% if(options.cssFramework == 'bootstrap') { %>
+  $icon-font-path: "../components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+  $fa-font-path: "../components/font-awesome/fonts";
+<% } %>
+
+<% if(options.cssFramework == 'bootstrap') { %>
+  @import '../components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+  @import '../components/font-awesome/scss/font-awesome';
+<% } %>
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
