@@ -13,26 +13,20 @@ module.exports = generators.Base.extend({
   },
   prompting: {
 
-    cssFramework: function () {
+    inuit: function () {
         var done = this.async();
         var prompt = [{
-          type: 'list',
-          name: 'cssFramework',
-          message: 'Select a CSS Framework to use:',
-          choices: [
-            'None',
-            'Inuit',
-            'Bootstrap'
-          ],
-
+          type: 'confirm',
+          name: 'inuit',
+          message: 'Do you want to use Inuit CSS?',
         }];
 
         this.prompt(prompt, function (response) {
-          if(response.cssFramework !== 'None') {
-            this.options.cssFramework = response.cssFramework.toLowerCase();
+          if(response.inuit === true) {
+            this.options.inuit = response.inuit;
           }
           else {
-            this.options.cssFramework = '';
+            return;
           }
           done();
         }.bind(this));
@@ -51,25 +45,17 @@ module.exports = generators.Base.extend({
 
 
       // css
-      var cssFramework = this.options.cssFramework;
-      if( cssFramework === 'inuit' ) {
+      var inuit = this.options.inuit;
+      if( inuit === true ) {
+        console.log('inuit');
         this.sourceRoot(path.join(__dirname, 'templates', 'css', 'inuit'));
       }
-      else {
-        this.sourceRoot(path.join(__dirname, 'templates', 'css', 'sass'));
-      }
       this.directory('.', 'public/css');
-
     },
     assetsDirs: function () {
       this.mkdir('public');
       this.mkdir('public/components');
-      this.mkdir('public/js');
       this.mkdir('public/css');
-      this.mkdir('public/img');
-      if (this.options.database === 'sqlite') {
-        this.mkdir('data');
-      }
     }
   },
   install: function () {

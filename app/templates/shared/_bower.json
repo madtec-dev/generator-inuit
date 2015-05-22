@@ -7,7 +7,6 @@
     "components"
   ],
  "dependencies": {
-   <% if(options.cssFramework == 'inuit'){ %>   
    "inuit-starter-kit": "~0.2.9",
    "inuit-spacing-responsive": "~0.0.7",
    "inuit-widths-responsive": "~0.2.2",
@@ -19,11 +18,6 @@
    "inuit-list-inline": "~0.3.2",
    "inuit-buttons": "~0.4.1",
    "inuit-tools-widths": "~0.1.4",
-   "inuit-layout": "~0.3.2"<% } %>
-   <% if(options.cssFramework == 'bootstrap') { %>
-     <% if (options.cssPreprocessor == 'sass') { %>
-       "bootstrap-sass-official": "~3.1.1",<% } %>
-     "bootstrap": "~3.1.1",
-     "font-awesome": ">=4.1.0"<% } %>
+   "inuit-layout": "~0.3.2"
  }
 }
