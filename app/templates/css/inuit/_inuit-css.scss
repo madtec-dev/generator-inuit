@@ -1,3 +1,6 @@
+$inuit-base-font-size: 14px;
+$inuit-base-line-height: 21px;
+
 @import "../components/inuit-defaults/settings.defaults";
 @import '../components/inuit-responsive-settings/_settings.responsive';
 
@@ -49,6 +52,5 @@ $inuit-enable-responsive-paddings--small: true;
 
 
 $inuit-enable-responsive-margins: true;
-$inuit-enable-responsive-paddings--none: true;
 @import '../components/inuit-spacing-responsive/_trumps.spacing-responsive';
 @import '../components/inuit-clearfix/_trumps.clearfix';

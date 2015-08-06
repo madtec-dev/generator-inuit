@@ -42,6 +42,10 @@ module.exports = generators.Base.extend({
         this.template(file, file.replace(/^_/, ''));
       }, this);
 
+      // handlebars
+      this.sourceRoot(path.join(__dirname, 'templates', 'hbs'));
+      this.directory('.', 'views/layouts');
+
 
       // css
       var inuit = this.options.inuit;
@@ -58,6 +62,6 @@ module.exports = generators.Base.extend({
     }
   },
   install: function () {
-    this.bowerInstall();
+    this.installDependencies();
   }
 });
